@@ -1,0 +1,6 @@
+osmnx
+geopandas
+shapely
+geopy
+tqdm
+pandas
