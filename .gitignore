@@ -26,3 +26,5 @@ cache/
 .DS_Store
 Thumbs.db
 
+#OTHER
+%USERPROFILE%.git-credentials-personal

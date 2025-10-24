@@ -345,7 +345,7 @@ if __name__ == "__main__":
         logger.warning(f"⚠️ Failed to fetch municipality polygon: {e}")
         north, south, east, west = 42.7485666, 42.6450690, 27.9065768, 27.6385
         bbox = (north, south, east, west)
-        logger.info("⚠️ Using fallback bounding box instead of area")
+        logger.info("⚠️ Using fallback bounding box")
 
     
     # Run risk detection with the bounding box
