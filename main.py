@@ -61,6 +61,7 @@ def get_layer(tags: dict, bbox_geom, max_retries: int = 3) -> gpd.GeoDataFrame:
             if not gdf.empty:
                 gdf["geometry"] = gdf.geometry.apply(make_valid)
                 gdf = gdf.to_crs(epsg=4326)
+
             return gdf
         except Exception as e:
             logger.warning(f"Attempt {attempt + 1}/{max_retries} failed to download layer: {e}")
@@ -344,7 +345,8 @@ if __name__ == "__main__":
         logger.warning(f"⚠️ Failed to fetch municipality polygon: {e}")
         north, south, east, west = 42.7485666, 42.6450690, 27.9065768, 27.6385
         bbox = (north, south, east, west)
-        logger.info("⚠️ Using fallback bounding box instead")
+        logger.info("⚠️ Using fallback bounding box instead of area")
+
     
     # Run risk detection with the bounding box
     run_risk_detection(bbox=bbox)
