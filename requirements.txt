@@ -4,3 +4,4 @@ shapely
 geopy
 tqdm
 pandas
+numpy
